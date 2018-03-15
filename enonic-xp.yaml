@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: enonic-xp
+  labels:
+    app: enonic-xp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enonic-xp
+  template:
+    metadata:
+      labels:
+        app: enonic-xp
+    spec:
+      containers:
+        - image: gcr.io/kubernetes-181111/enonic-xp-image
+          name: enonic-xp
+          ports:
+            - containerPort: 8080
+              name: enonic-xp
+          volumeMounts:
+            - name: enonic-xp-persistent-storage
+              mountPath: /enonic-xp/home/repo/
+      volumes:
+        - name: enonic-xp-persistent-storage
+          gcePersistentDisk:
+            pdName: enonic-xp-disk
+            fsType: ext4
