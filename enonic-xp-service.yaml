@@ -5,8 +5,9 @@ metadata:
   labels:
     app: enonic-xp-app
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 8080
+      targetPort: 8080
   selector:
     app: enonic-xp-app

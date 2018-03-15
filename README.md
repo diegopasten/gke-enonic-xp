@@ -1,5 +1,12 @@
+# Enonic XP on Google Kubernetes Engine (GKE)
+
+Assuming that:
+* gcloud tool is set up
+* GKE cluster is already created
+* kubectl is installed and connected to the GKE cluster
+
 ```
-gcloud compute disks create --size 200GB enonic-xp-disk
+gcloud compute disks create --size 50GB enonic-xp-disk
 ```
 
 ```
@@ -8,4 +15,12 @@ kubectl create -f enonic-xp.yaml
 
 ```
 kubectl create -f enonic-xp-service.yaml
+```
+
+```
+gcloud compute addresses create xp-diego-cloud-ip --global
+```
+
+```
+kubectl create -f enonic-xp-ingress.yaml
 ```
