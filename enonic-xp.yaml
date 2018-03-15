@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: enonic-xp
   labels:
-    app: enonic-xp
+    app: enonic-xp-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: enonic-xp
+      app: enonic-xp-app
   template:
     metadata:
       labels:
-        app: enonic-xp
+        app: enonic-xp-app
     spec:
       containers:
         - image: gcr.io/kubernetes-181111/enonic-xp-image
