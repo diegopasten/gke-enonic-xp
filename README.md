@@ -6,7 +6,7 @@ Assuming that:
 * kubectl is installed and connected to the GKE cluster
 
 ```
-gcloud compute disks create --size 50GB enonic-xp-disk
+gcloud compute disks create --size 50GB enonic-xp-pdisk
 ```
 
 ```

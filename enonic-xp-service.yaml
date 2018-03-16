@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: enonic-xp
+  name: enonic-xp-deployment
   labels:
-    app: enonic-xp-app
+    app: enonic-xp-platform
 spec:
   type: NodePort
-  ports:
-    - port: 8080
-      targetPort: 8080
   selector:
-    app: enonic-xp-app
+    app: enonic-xp-platform
+    tier: web
+  ports:
+    - port: 80
+      targetPort: 8080

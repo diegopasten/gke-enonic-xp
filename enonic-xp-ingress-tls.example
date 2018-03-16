@@ -11,3 +11,8 @@ spec:
   backend:
     serviceName: enonic-xp-deployment
     servicePort: 8080
+
+  tls:
+    - secretName: xp-diego-cloud-ip-tls
+      hosts:
+      - xp.diego.cloud
