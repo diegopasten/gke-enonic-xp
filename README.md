@@ -10,7 +10,7 @@ gcloud compute disks create --size 50GB enonic-xp-disk
 ```
 
 ```
-kubectl create -f enonic-xp.yaml
+kubectl create -f enonic-xp-deployment.yaml
 ```
 
 ```
