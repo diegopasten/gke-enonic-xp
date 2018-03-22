@@ -8,10 +8,19 @@ Assuming that:
 ```
 gcloud compute disks create --size 50GB enonic-xp-pdisk
 ```
+Default is SATA disk (pd-standard), to use SSD add --type=pd-ssd
 
 ```
 kubectl create -f enonic-xp-deployment.yaml
 ```
+
+```
+kubectl create -f enonic-xp-dev-service.yaml
+```
+
+### Optional: TLS from Lets Encrypt with Cert-Manager
+* Cert-Manager must be installed on the k8s cluster
+* Requires port type NodePort instead of LoadBalancer
 
 ```
 kubectl create -f enonic-xp-service.yaml
