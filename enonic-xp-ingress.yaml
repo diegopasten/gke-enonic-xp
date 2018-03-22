@@ -1,13 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: enonic-xp-ingress
+  name: enonic-xp-deployment
   annotations:
     kubernetes.io/ingress.global-static-ip-name: xp-diego-cloud-ip
-    kubernetes.io/ingress.class: "nginx"
+    #kubernetes.io/ingress.class: "nginx"
   labels:
-    app: enonic-xp-platform
+    app: enonic-xp-app
 spec:
   backend:
-    serviceName: enonic-xp-deployment
+    serviceName: enonic-xp-backend
     servicePort: 8080
+
