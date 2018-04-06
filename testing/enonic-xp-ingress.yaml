@@ -10,5 +10,5 @@ metadata:
 spec:
   backend:
     serviceName: enonic-xp
-    servicePort: 8080
+    servicePort: 80
 
